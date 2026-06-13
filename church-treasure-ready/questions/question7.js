@@ -1,1 +1,0 @@
-export default { id:'q7', type:'photo', title:'사진 미션 1', question:'교회 친구 3명 이상과 함께 사진을 찍어 업로드하세요.', photoCheck:{ mode:'teachable-machine', modelPath:'./model/people3', successLabel:'success', threshold:0.8 } };

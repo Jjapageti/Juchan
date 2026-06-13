@@ -1,1 +1,0 @@
-export default { id:'q8', type:'photo', title:'사진 미션 2', question:'모자를 쓴 친구와 함께 사진을 찍어 업로드하세요.', photoCheck:{ mode:'teachable-machine', modelPath:'./model/hat', successLabel:'hat', threshold:0.75 } };

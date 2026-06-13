@@ -1,1 +1,0 @@
-export default { id:'q9', type:'photo', title:'사진 미션 3', question:'하트 포즈를 만들고 사진을 찍어 업로드하세요.', photoCheck:{ mode:'teachable-machine', modelPath:'./model/heart', successLabel:'heart', threshold:0.75 } };
