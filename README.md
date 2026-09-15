@@ -1,27 +1,27 @@
-# 주찬양 QR 보물찾기
+# 교회 QR 보물찾기 / QR-Schatzsuche der Gemeinde
 
-서버/DB 없이 GitHub Pages에서 실행 가능한 교회 QR 보물찾기 웹앱입니다.
+한국어와 독일어를 함께 표시하는 10개 미션용 정적 웹앱입니다. 사진 업로드 및 이미지 분석 기능은 제거되었으며, 모든 미션은 현장에서 증거를 확인받고 비밀번호를 입력하는 방식으로 진행됩니다.
 
-## 핵심 방식
-- QR 코드는 모두 같은 주소를 사용합니다.
-- 참가자는 QR을 스캔하면 랜덤 미션 1개를 받습니다.
-- 정답을 맞히거나 사진 미션을 통과하면 `다음 QR을 찾아 스캔하세요` 화면이 나옵니다.
-- 다시 같은 QR 주소로 접속하면 아직 풀지 않은 문제 중 하나가 랜덤으로 나옵니다.
-- 5개 성공 시 완료 화면이 표시됩니다.
+Statische Web-App mit zehn Missionen auf Koreanisch und Deutsch. Foto-Upload und Bildanalyse wurden entfernt. Nach jeder erfüllten Aufgabe wird der Nachweis vor Ort geprüft und das Passwort eingegeben.
 
-## 실행 방법
-```bash
-py -m http.server 8000
-```
-브라우저에서 `http://localhost:8000` 접속.
+## 실행 / Start
 
-## 배포 방법
-GitHub Pages에 전체 파일을 올리고 생성된 주소로 QR 하나를 만든 뒤 여러 장 출력하세요.
+1. 전체 폴더를 GitHub 저장소에 업로드합니다.
+2. GitHub Pages를 활성화합니다.
+3. 생성된 페이지 주소로 QR코드를 만듭니다.
 
-## Teachable Machine 모델
-모델 파일을 아래 폴더에 넣으세요.
-- model/people3/model.json, metadata.json, weights.bin
-- model/hat/model.json, metadata.json, weights.bin
-- model/heart/model.json, metadata.json, weights.bin
+1. Den gesamten Ordner in ein GitHub-Repository hochladen.
+2. GitHub Pages aktivieren.
+3. Aus der veröffentlichten URL einen QR-Code erstellen.
 
-모델이 없으면 사진 업로드만으로 임시 성공 처리됩니다.
+## 현재 설정 / Aktuelle Einstellungen
+
+- 완료해야 하는 미션: 10개 / Abzuschließende Missionen: 10
+- 미션 순서: 참가자별 무작위 / Reihenfolge: zufällig pro Teilnehmer
+- 모든 미션 비밀번호 / Passwort für alle Missionen: `b486`
+- 진행도 저장: 참가자의 브라우저 `localStorage`
+- Fortschritt: im `localStorage` des Browsers
+
+비밀번호를 변경하려면 `questions/question1.js`부터 `question10.js`까지의 `answers` 값을 수정하세요.
+
+Zum Ändern des Passworts den Wert `answers` in `questions/question1.js` bis `question10.js` anpassen.
