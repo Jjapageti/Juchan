@@ -20,14 +20,15 @@
 
     <section class="pixel-card hidden" id="mission-screen">
       <div class="top-bar">
-        <span id="player-label"></span>
+        <span data-player-label></span>
         <button id="reset-btn" class="mini-btn">초기화 / Zurücksetzen</button>
       </div>
 
+      <div id="spot-label" class="spot-label"></div>
       <h2 id="mission-title"></h2>
       <div class="progress-box">
-        <span id="progress-blocks">□□□□□□□□□□</span>
-        <span id="progress-text">0 / 10</span>
+        <span data-progress-blocks>□□□□□□□□□□</span>
+        <span data-progress-text>성공 / Erfolg 0 · QR 0 / 10</span>
       </div>
 
       <p id="mission-question" class="mission-text"></p>
@@ -42,19 +43,38 @@
           autocapitalize="none"
         />
         <button id="check-answer-btn" class="pixel-btn">비밀번호 확인 / Passwort prüfen</button>
+        <button id="fail-btn" class="pixel-btn danger-btn hidden">미션 실패 / Mission gescheitert</button>
       </div>
 
       <p id="message" class="message" aria-live="polite"></p>
-      <button id="next-btn" class="pixel-btn hidden">다음 랜덤 미션 / Nächste zufällige Mission</button>
+    </section>
+
+    <section class="pixel-card hidden" id="scan-screen">
+      <div class="top-bar">
+        <span data-player-label></span>
+        <button id="scan-reset-btn" class="mini-btn">초기화 / Zurücksetzen</button>
+      </div>
+      <h2>🔎 다른 QR을 찾으세요<span class="title-de">Finde einen anderen QR-Code</span></h2>
+      <div class="progress-box">
+        <span data-progress-blocks>□□□□□□□□□□</span>
+        <span data-progress-text>성공 / Erfolg 0 · QR 0 / 10</span>
+      </div>
+      <p id="scan-message" class="scan-message" aria-live="polite"></p>
+      <p class="scan-guide">
+        이 화면의 버튼으로 다음 미션을 열 수 없습니다.<br />
+        숨겨진 다른 QR코드를 직접 찾아 스캔하세요.<br />
+        <span class="de-text">Die nächste Mission kann nicht über diese Seite geöffnet werden. Finde und scanne einen anderen versteckten QR-Code.</span>
+      </p>
     </section>
 
     <section class="pixel-card gold-card hidden" id="complete-screen">
-      <h1>🎉 축하합니다!<span class="title-de">Herzlichen Glückwunsch!</span></h1>
-      <p>10개의 미션을 모두 완료했습니다.<br /><span class="de-text">Alle 10 Missionen wurden abgeschlossen.</span></p>
+      <h1>🎉 QR 탐색 완료!<span class="title-de">QR-Suche abgeschlossen!</span></h1>
       <p class="complete-name" id="complete-name"></p>
+      <p class="complete-score" id="complete-score"></p>
+      <p id="complete-used"></p>
       <p class="complete-guide">
-        진행자를 찾아가 완료 화면을 보여주세요.<br />
-        <span class="de-text">Zeige diese Abschlussseite der Spielleitung.</span>
+        진행자를 찾아가 이 결과 화면을 보여주세요.<br />
+        <span class="de-text">Zeige diese Ergebnisseite der Spielleitung.</span>
       </p>
       <button id="complete-reset-btn" class="pixel-btn">처음부터 다시하기 / Neu starten</button>
     </section>

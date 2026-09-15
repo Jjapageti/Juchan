@@ -1,0 +1,41 @@
+교회 QR 보물찾기 업데이트 방법
+================================
+
+1. ZIP 파일의 압축을 풉니다.
+
+2. 압축을 푼 폴더 안의 모든 파일과 폴더를 다음 Git 저장소 폴더에
+   복사하고, 같은 이름의 파일은 덮어씁니다.
+
+   C:\Users\Seokhyun.Choi\Desktop\개인\교\church-treasure-git
+
+3. PowerShell에서 저장소 폴더로 이동합니다.
+
+   cd "C:\Users\Seokhyun.Choi\Desktop\개인\교\church-treasure-git"
+
+4. 로컬 테스트 서버를 실행합니다.
+
+   py -m http.server 8000
+
+5. 브라우저에서 아래 주소를 각각 열어 QR 1과 QR 2가 구분되는지 확인합니다.
+
+   http://localhost:8000/?spot=1
+   http://localhost:8000/?spot=2
+
+6. 테스트 서버를 Ctrl+C로 종료하고 GitHub에 업로드합니다.
+
+   git add .
+   git commit -m "장소별 QR 랜덤 미션 적용"
+   git push origin main
+
+7. GitHub Pages 반영 후 다음 주소들을 QR코드로 만듭니다.
+
+   https://jjapageti.github.io/Juchan/?spot=1
+   ...
+   https://jjapageti.github.io/Juchan/?spot=10
+
+중요
+----
+- js\spotGame.js 파일도 반드시 함께 복사해야 합니다.
+- 참가자 테스트 전 초기화 버튼을 눌러 기존 진행 기록을 지웁니다.
+- 미션 비밀번호 입력창은 화면에서 가려지지만, 정적 사이트 소스를
+  확인하면 비밀번호를 찾을 수 있으므로 진행자가 직접 입력하세요.
