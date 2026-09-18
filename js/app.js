@@ -1,5 +1,5 @@
 import { loadState, saveState, resetState } from './storage.js';
-import { loadQuestions } from './questionLoader.js';
+import { loadQuestions } from './questionLoader.js?v=15';
 import {
   SPOT_COUNT,
   assignSpot,

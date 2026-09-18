@@ -1,6 +1,6 @@
 export async function loadQuestions() {
   const modules = await Promise.all(
-    Array.from({ length: 10 }, (_, index) =>
+    Array.from({ length: 15 }, (_, index) =>
       import(`../questions/question${index + 1}.js`)
     )
   );
